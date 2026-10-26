@@ -1,0 +1,16 @@
+{
+ "script": "code/09b_invariance.py",
+ "arguments": {
+  "input": "data/pool_test.jsonl",
+  "n_sample": 200,
+  "seed": 0
+ },
+ "tolerance": 1e-06,
+ "molecules_sampled": 200,
+ "bonds_compared": 5746,
+ "bonds_unmatched": 0,
+ "lambda2_shifts": 0,
+ "check_A_invariance": "PASSED",
+ "check_C_sign_invariance": "PASSED",
+ "stdout": "molecules sampled : 200\nbonds compared    : 5746\nbonds unmatched   : 0\nlambda2 shifts    : 0\n\nCHECK A PASSED: every structural feature is invariant to atom renumbering (tolerance 1e-06)\nCHECK C PASSED: Fiedler-derived features are sign-invariant"
+}

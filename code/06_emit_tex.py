@@ -468,20 +468,17 @@ def write_tables(R, F, outdir):
         chr(10).join(_tex) + chr(10))
 
     # ---- table 2: ablation ------------------------------------------
-    # S:struct_all and C:chem_all are the same predictors as struct_model and
-    # chem_model.  Write_tables must use their CIs from the main-selector table
-    # (which has its own bootstrap run) so the same numbers appear in both tables.
-    _abl_ci_override = {
-        'S:struct_all': M.get('struct_model'),
-        'C:chem_all':   M.get('chem_model'),
-    }
+    # S:struct_all and C:chem_all reproduce the predictions of struct_model and
+    # chem_model exactly, so the two tables describe the same predictors.  Each
+    # row nevertheless reports the interval from its OWN bootstrap realization
+    # (ablation.json for this table, numbers.json.main for the selector table):
+    # resampling the same hit vector twice gives slightly different endpoints,
+    # and substituting one table's endpoints into the other would misreport the
+    # provenance of the interval.  The caption states this.
     rows = []
     for d in R['ablation']:
-        src = _abl_ci_override.get(d['key'])
-        lo  = src['lo'] if src else d['lo']
-        hi  = src['hi'] if src else d['hi']
         rows.append('%s & %s & [%s, %s] \\\\' % (
-            d['label'], f3(d['acc']), f3(lo), f3(hi)))
+            d['label'], f3(d['acc']), f3(d['lo']), f3(d['hi'])))
     open(os.path.join(T, 'tab_ablation.tex'), 'w', encoding='utf-8').write(
         '\n'.join([
             r'\begin{table}[t]',
@@ -498,7 +495,14 @@ def write_tables(R, F, outdir):
             r'$k$-core minimum and maximum, endpoint triangle-count minimum '
             r'and maximum, graph order and size, cyclomatic number, and the '
             r'bridge flag. The bridge flag therefore belongs to the '
-            r'topology subset, not the spectral one.}',
+            r'topology subset, not the spectral one. Two rows restate '
+            r'predictors that also appear in Table~\ref{tab:selectors}: the '
+            r'all-structural row is the structural model and the all-chemical '
+            r'row is the chemical model, and their accuracies are identical. '
+            r'Each table reports the interval from its own bootstrap '
+            r'realization, so the two intervals for the same predictor can '
+            r'differ in the last digit; that is resampling noise, not a '
+            r'disagreement about the predictor.}',
             r'\label{tab:ablation}',
             r'\begin{tabular}{lcc}',
             r'\toprule',
@@ -564,8 +568,10 @@ def write_tables(R, F, outdir):
         '\n'.join([
             r'\begin{table}[t]',
             r'\centering',
-            r'\caption{Accuracy by reaction superclass (the ten reaction '
-            r'classes of Carey et al.~\protect\cite{carey2006analysis}).}',
+            r'\caption{Accuracy by reaction superclass (Carey et '
+            r'al.~\protect\cite{carey2006analysis}). Only the eight classes '
+            r'present in the retained test set are shown; two of the ten '
+            r'Carey classes have no retained test molecule.}',
             r'\label{tab:perclass}',
             r'\begin{tabular}{lcccccc}',
             r'\toprule',
