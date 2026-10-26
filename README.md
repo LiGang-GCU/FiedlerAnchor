@@ -7,11 +7,14 @@ on USPTO-50K. The manuscript itself is **not** in this repository.
 
 | Path | Contents |
 |---|---|
-| `code/` | The full pipeline, stages 01–10 |
-| `data/*.json` | Result files: per-molecule predictions, ablation, statistics |
+| `code/` | The full pipeline, stages 01–12 (see the table below) |
+| `data/*.json` | Result files: per-molecule predictions, ablation, GNN runs, audit records |
 | `data/*.jsonl` | Per-molecule pools for the retained test split |
-| `figures/` | Rendered figures (PDF + PNG) |
+| `figures/` | Rendered figures and the ACS TOC graphic (PDF + PNG) |
 | `logs/` | Training logs from the ablation and GNN runs |
+
+The manuscript, the cover letter, the review artefacts and the assembled
+submission package are **not** in this repository; `.gitignore` excludes them.
 
 ## The single-source-of-numbers rule
 
@@ -55,6 +58,19 @@ Run from the repository root. Each stage takes its paths as arguments.
 | 9 | `09_gnn.py`, `09d_multiseed.py` | features | `gnn_runs/*.json` |
 | 9b/c/e | invariance, leakage, ring-redundancy audits | features | audit JSONs |
 | 10 | `10_gnn_stats.py` | `gnn_runs/*.json` | `gnn_numbers.json` |
+| 11 | `11_toc_graphic.py <numbers.json> <outdir>` | `numbers.json` | `toc_graphic.pdf/.png` (8.25 x 4.44 cm) |
+| 12 | `12_emit_si.py` | all of `data/*.json` | `paper/si/main_si.tex` |
+
+### Notes on individual stages
+
+- **Stage 2 is the expensive one.** It writes ~1 GB of per-bond features from
+  `pool_*.jsonl`; those files are gitignored. Every reported number is
+  computed on the test split, so a reader who only wants to check the results
+  can start from the tracked `data/` files and skip stages 1–4 entirely.
+- **Stage 9b needs the pool file, not the per-molecule file.** Run it as
+  `python code/09b_invariance.py data/pool_test.jsonl 200`; it reads `smiles`,
+  which `mol_test.jsonl` does not carry. Its result is recorded in
+  `data/invariance_audit.json`.
 
 ## Data
 
