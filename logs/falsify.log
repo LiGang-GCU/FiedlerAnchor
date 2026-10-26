@@ -1,0 +1,14 @@
+CHECK1 spectral  it= 200 lr=0.05 leaf= 15 -> 0.3192
+CHECK1 spectral  it= 400 lr=0.06 leaf= 31 -> 0.3331
+CHECK1 spectral  it= 800 lr=0.03 leaf= 63 -> 0.3393
+CHECK1 spectral  it=1500 lr=0.02 leaf=127 -> 0.3605
+CHECK1 spectral  it=3000 lr=0.01 leaf=255 -> 0.3663
+CHECK1 struct    it= 400 lr=0.06 leaf= 31 -> 0.5026
+CHECK1 struct    it=1500 lr=0.02 leaf=127 -> 0.5275
+CHECK2 struct_noring              18 feats -> 0.4703
+CHECK2 struct_noring_nospectral    8 feats -> 0.2353
+CHECK2 topo_without_cycle_detour  23 feats -> 0.5032
+CHECK3 chem+struct 0.7421 | chem+topo 0.7184 | chem+spectral 0.6284
+CHECK4 qualified    n=2332  random=0.0417 sbe=0.2719 combined=0.7543
+CHECK4 unqualified  n=1236  random=0.0403 sbe=0.0105 combined=0.7184
+wrote ../data/falsify.json

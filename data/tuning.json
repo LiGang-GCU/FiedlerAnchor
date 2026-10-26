@@ -1,0 +1,128 @@
+{
+ "chem": {
+  "chosen": {
+   "max_iter": 1500,
+   "learning_rate": 0.02,
+   "max_leaf_nodes": 127
+  },
+  "valid_acc": 0.5398263495658739,
+  "trace": [
+   {
+    "cfg": {
+     "max_iter": 200,
+     "learning_rate": 0.05,
+     "max_leaf_nodes": 15
+    },
+    "valid_acc": 0.503208758021895
+   },
+   {
+    "cfg": {
+     "max_iter": 400,
+     "learning_rate": 0.06,
+     "max_leaf_nodes": 31
+    },
+    "valid_acc": 0.5364288410721026
+   },
+   {
+    "cfg": {
+     "max_iter": 800,
+     "learning_rate": 0.03,
+     "max_leaf_nodes": 63
+    },
+    "valid_acc": 0.5383163457908645
+   },
+   {
+    "cfg": {
+     "max_iter": 1500,
+     "learning_rate": 0.02,
+     "max_leaf_nodes": 127
+    },
+    "valid_acc": 0.5398263495658739
+   }
+  ]
+ },
+ "struct": {
+  "chosen": {
+   "max_iter": 1500,
+   "learning_rate": 0.02,
+   "max_leaf_nodes": 127
+  },
+  "valid_acc": 0.3873159682899207,
+  "trace": [
+   {
+    "cfg": {
+     "max_iter": 200,
+     "learning_rate": 0.05,
+     "max_leaf_nodes": 15
+    },
+    "valid_acc": 0.3412608531521329
+   },
+   {
+    "cfg": {
+     "max_iter": 400,
+     "learning_rate": 0.06,
+     "max_leaf_nodes": 31
+    },
+    "valid_acc": 0.3567383918459796
+   },
+   {
+    "cfg": {
+     "max_iter": 800,
+     "learning_rate": 0.03,
+     "max_leaf_nodes": 63
+    },
+    "valid_acc": 0.36655341638354094
+   },
+   {
+    "cfg": {
+     "max_iter": 1500,
+     "learning_rate": 0.02,
+     "max_leaf_nodes": 127
+    },
+    "valid_acc": 0.3873159682899207
+   }
+  ]
+ },
+ "combined": {
+  "chosen": {
+   "max_iter": 1500,
+   "learning_rate": 0.02,
+   "max_leaf_nodes": 127
+  },
+  "valid_acc": 0.6519441298603247,
+  "trace": [
+   {
+    "cfg": {
+     "max_iter": 200,
+     "learning_rate": 0.05,
+     "max_leaf_nodes": 15
+    },
+    "valid_acc": 0.5783314458286146
+   },
+   {
+    "cfg": {
+     "max_iter": 400,
+     "learning_rate": 0.06,
+     "max_leaf_nodes": 31
+    },
+    "valid_acc": 0.6300490751226878
+   },
+   {
+    "cfg": {
+     "max_iter": 800,
+     "learning_rate": 0.03,
+     "max_leaf_nodes": 63
+    },
+    "valid_acc": 0.6357115892789732
+   },
+   {
+    "cfg": {
+     "max_iter": 1500,
+     "learning_rate": 0.02,
+     "max_leaf_nodes": 127
+    },
+    "valid_acc": 0.6519441298603247
+   }
+  ]
+ }
+}

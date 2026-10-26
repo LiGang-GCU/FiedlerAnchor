@@ -1,0 +1,481 @@
+{
+ "n_test_molecules": 3587,
+ "n_test_bonds": 104135,
+ "n_test_truth": 3696,
+ "main": [
+  {
+   "key": "random",
+   "label": "Uniform random (analytic)",
+   "acc": 0.04133069944325908,
+   "lo": 0.040673563699303555,
+   "hi": 0.04198422017067484,
+   "abstain": 0
+  },
+  {
+   "key": "resistance",
+   "label": "Effective resistance, argmax",
+   "acc": 0.16336771675494843,
+   "lo": 0.15193058265960413,
+   "hi": 0.17535545023696683,
+   "abstain": 0
+  },
+  {
+   "key": "sbe",
+   "label": "Fiedler sign boundary (SBE)",
+   "acc": 0.18037357122943964,
+   "lo": 0.16782129913576804,
+   "hi": 0.19348341232227492,
+   "abstain": 19
+  },
+  {
+   "key": "betweenness",
+   "label": "Edge betweenness, argmax",
+   "acc": 0.2525787566211319,
+   "lo": 0.23808196264287707,
+   "hi": 0.26679676609980485,
+   "abstain": 0
+  },
+  {
+   "key": "fiedler_df",
+   "label": "Fiedler gradient $|\\Delta f|$, argmax",
+   "acc": 0.2659604126010594,
+   "lo": 0.2517424031223864,
+   "hi": 0.280735991078896,
+   "abstain": 0
+  },
+  {
+   "key": "brics",
+   "label": "BRICS",
+   "acc": 0.2782269305826596,
+   "lo": 0.2637301366044048,
+   "hi": 0.29328129356007804,
+   "abstain": 65
+  },
+  {
+   "key": "struct_model",
+   "label": "Structural model (unlabelled graph)",
+   "acc": 0.38639531642040703,
+   "lo": 0.3705045999442431,
+   "hi": 0.4028436018957346,
+   "abstain": 0
+  },
+  {
+   "key": "chem_model",
+   "label": "Chemical model (atom labels)",
+   "acc": 0.5280178422079732,
+   "lo": 0.5112907722330639,
+   "hi": 0.544187343183719,
+   "abstain": 0
+  },
+  {
+   "key": "combined",
+   "label": "Chemical + structural model",
+   "acc": 0.6453861165319208,
+   "lo": 0.6297741845553387,
+   "hi": 0.660998048508503,
+   "abstain": 0
+  }
+ ],
+ "pairs": {
+  "betweenness__fiedler_df": {
+   "a_only": 154,
+   "b_only": 202,
+   "n_disc": 356,
+   "p": 0.012629542491007685,
+   "diff": -0.013381655979927517,
+   "lo": -0.02370365207694452,
+   "hi": -0.003345413994981879
+  },
+  "sbe__betweenness": {
+   "a_only": 161,
+   "b_only": 420,
+   "n_disc": 581,
+   "p": 1.2615119921552141e-27,
+   "diff": -0.07220518539169223,
+   "lo": -0.08530805687203792,
+   "hi": -0.059381098410928354
+  },
+  "struct_model__betweenness": {
+   "a_only": 808,
+   "b_only": 328,
+   "n_disc": 1136,
+   "p": 3.0727145684983886e-47,
+   "diff": 0.13381655979927515,
+   "lo": 0.11597435182603848,
+   "hi": 0.15137998327293004
+  },
+  "struct_model__chem_model": {
+   "a_only": 546,
+   "b_only": 1054,
+   "n_disc": 1600,
+   "p": 2.003855623736644e-37,
+   "diff": -0.1416225257875662,
+   "lo": -0.1630889322553666,
+   "hi": -0.11987733482018399
+  },
+  "combined__chem_model": {
+   "a_only": 741,
+   "b_only": 320,
+   "n_disc": 1061,
+   "p": 4.776283795743584e-39,
+   "diff": 0.11736827432394759,
+   "lo": 0.09980485085029273,
+   "hi": 0.13493169779760245
+  },
+  "combined__struct_model": {
+   "a_only": 1125,
+   "b_only": 196,
+   "n_disc": 1321,
+   "p": 1.2492754695643815e-158,
+   "diff": 0.2589908001115138,
+   "lo": 0.24059102313911346,
+   "hi": 0.2768330080847505
+  },
+  "chem_model__betweenness": {
+   "a_only": 1388,
+   "b_only": 400,
+   "n_disc": 1788,
+   "p": 2.15769110527028e-127,
+   "diff": 0.2754390855868414,
+   "lo": 0.2545302481182046,
+   "hi": 0.2966336771675495
+  },
+  "brics__fiedler_df": {
+   "a_only": 145,
+   "b_only": 101,
+   "n_disc": 246,
+   "p": 0.006001543984715429,
+   "diff": 0.012266517981600222,
+   "lo": 0.0036241984945637024,
+   "hi": 0.02063005296905492
+  },
+  "S:struct_all__S:spectral": {
+   "diff": 0.03345413994981879,
+   "lo": 0.020072483969891274,
+   "hi": 0.047672149428491774,
+   "a_only": 381,
+   "b_only": 261,
+   "n_disc": 642,
+   "p": 2.482584418996392e-06
+  },
+  "S:struct_all__S:topology": {
+   "diff": 0.0850292723724561,
+   "lo": 0.06662252578756622,
+   "hi": 0.10342904934485643,
+   "a_only": 731,
+   "b_only": 426,
+   "n_disc": 1157,
+   "p": 2.4860076050702087e-19
+  },
+  "D:chem+struct__D:chem+spectral": {
+   "diff": 0.013381655979927517,
+   "lo": 0.003345413994981879,
+   "hi": 0.02313911346529133,
+   "a_only": 191,
+   "b_only": 143,
+   "n_disc": 334,
+   "p": 0.010013803761455128
+  },
+  "D:chem+struct__D:chem+topology": {
+   "diff": 0.04627822693058266,
+   "lo": 0.03094507945358238,
+   "hi": 0.06077502090883747,
+   "a_only": 460,
+   "b_only": 294,
+   "n_disc": 754,
+   "p": 1.61268444349493e-09
+  }
+ },
+ "decomp": {
+  "A": 0.04133069944325908,
+  "B": 0.5280178422079732,
+  "C": 0.38639531642040703,
+  "D": 0.6453861165319208,
+  "total": 0.6040554170886617,
+  "unique_chem": 0.25899080011151376,
+  "unique_struct": 0.11736827432394759,
+  "shared": 0.22769634265320038,
+  "sum": 0.6040554170886617,
+  "shared_frac": 0.37694611489558033,
+  "chem_frac": 0.42875337723111545,
+  "struct_frac": 0.19430050787330422,
+  "additive": 0.8730824591851212,
+  "interaction": -0.22769634265320038
+ },
+ "decomp_ci": {
+  "total": [
+   0.5890101592669077,
+   0.619005054597314
+  ],
+  "unique_chem": [
+   0.2408628380262057,
+   0.2773905770839141
+  ],
+  "unique_struct": [
+   0.09979788123780313,
+   0.13465291329802065
+  ],
+  "shared": [
+   0.20590251748958666,
+   0.24922946770955132
+  ]
+ },
+ "ablation": [
+  {
+   "key": "A:random",
+   "label": "Uniform random (analytic)",
+   "acc": 0.04133069944325908,
+   "lo": 0.040690782956098265,
+   "hi": 0.041993621633394214
+  },
+  {
+   "key": "S:spectral",
+   "label": "Spectral descriptors only",
+   "acc": 0.35294117647058826,
+   "lo": 0.33760802899358794,
+   "hi": 0.36883189294675217
+  },
+  {
+   "key": "S:topology",
+   "label": "Non-spectral topology only",
+   "acc": 0.3013660440479509,
+   "lo": 0.2857541120713688,
+   "hi": 0.31586283802620574
+  },
+  {
+   "key": "S:struct_all",
+   "label": "All unlabelled-graph features",
+   "acc": 0.38639531642040703,
+   "lo": 0.3705045999442431,
+   "hi": 0.4022930025090605
+  },
+  {
+   "key": "S:noring_direct",
+   "label": "Structural, ring features removed",
+   "acc": 0.38639531642040703,
+   "lo": 0.3705045999442431,
+   "hi": 0.4028436018957346
+  },
+  {
+   "key": "S:noring_all",
+   "label": "Structural, ring features and proxies removed",
+   "acc": 0.367437970448843,
+   "lo": 0.35182603847226096,
+   "hi": 0.38277111792584334
+  },
+  {
+   "key": "C:bond_order",
+   "label": "Bond order block only",
+   "acc": 0.44103707833844435,
+   "lo": 0.4245887928631168,
+   "hi": 0.45664901031502647
+  },
+  {
+   "key": "C:atom_identity",
+   "label": "Atom identity block only",
+   "acc": 0.47393364928909953,
+   "lo": 0.4569277948146083,
+   "hi": 0.49066071926400895
+  },
+  {
+   "key": "C:chem_all",
+   "label": "All chemical features",
+   "acc": 0.5280178422079732,
+   "lo": 0.5118483412322274,
+   "hi": 0.5453024811820463
+  },
+  {
+   "key": "D:chem+spectral",
+   "label": "Chemical + spectral",
+   "acc": 0.6320044605519933,
+   "lo": 0.6161137440758294,
+   "hi": 0.6478951770281572
+  },
+  {
+   "key": "D:chem+topology",
+   "label": "Chemical + non-spectral topology",
+   "acc": 0.5991078896013382,
+   "lo": 0.5829383886255924,
+   "hi": 0.6149986060775021
+  },
+  {
+   "key": "D:chem+struct",
+   "label": "Chemical + all structural",
+   "acc": 0.6453861165319208,
+   "lo": 0.6300529690549206,
+   "hi": 0.660998048508503
+  }
+ ],
+ "strata": {
+  "all_nonring_truth": {
+   "n": 3457,
+   "random": 0.04001758178989276,
+   "betweenness": 0.2609198727220133,
+   "fiedler_df": 0.2750940121492624,
+   "brics": 0.2886896152733584,
+   "struct_model": 0.3994793173271623,
+   "chem_model": 0.5406421752964998,
+   "combined": 0.6641596760196702
+  },
+  "has_ring_truth": {
+   "n": 130,
+   "random": 0.07624952811777752,
+   "betweenness": 0.03076923076923077,
+   "fiedler_df": 0.023076923076923078,
+   "brics": 0.0,
+   "struct_model": 0.038461538461538464,
+   "chem_model": 0.19230769230769232,
+   "combined": 0.14615384615384616
+  },
+  "ring_only_truth": {
+   "n": 130,
+   "random": 0.07624952811777752,
+   "betweenness": 0.03076923076923077,
+   "fiedler_df": 0.023076923076923078,
+   "brics": 0.0,
+   "struct_model": 0.038461538461538464,
+   "chem_model": 0.19230769230769232,
+   "combined": 0.14615384615384616
+  }
+ },
+ "scope": {
+  "qualified": {
+   "n": 2332,
+   "ring_pick": 0.0,
+   "acc": 0.2718696397941681,
+   "fiedler_df": 0.2718696397941681,
+   "betweenness": 0.2521440823327616,
+   "random": 0.041670652260041116,
+   "chem_model": 0.5475986277873071,
+   "combined": 0.6535162950257289
+  },
+  "unqualified": {
+   "n": 1236,
+   "ring_pick": 1.0,
+   "acc": 0.010517799352750809,
+   "fiedler_df": 0.2580906148867314,
+   "betweenness": 0.25485436893203883,
+   "random": 0.04033733167702793,
+   "chem_model": 0.4894822006472492,
+   "combined": 0.6294498381877023
+  },
+  "abstained": {
+   "n": 19
+  },
+  "violations": 0,
+  "unqual_ring": 1236,
+  "n_selected": 3587,
+  "n_total": 3587
+ },
+ "composed": {
+  "sbe_then_combined": 0.39726791190409816,
+  "combined_everywhere": 0.6453861165319208,
+  "n_qual": 2332
+ },
+ "pool": {
+  "ring_bond_frac": 0.5985595621068804,
+  "truth_ring_frac": 0.061958874458874456,
+  "truth_rate_ring": 0.0036739343183969453,
+  "truth_rate_nonring": 0.08293464740216247
+ },
+ "per_class": [
+  {
+   "cls": "1",
+   "n": 1509,
+   "betweenness": 0.317428760768721,
+   "fiedler_df": 0.3240556660039761,
+   "brics": 0.3465871438038436,
+   "struct_model": 0.3949635520212061,
+   "chem_model": 0.36845593108018554,
+   "combined": 0.6110006626905236
+  },
+  {
+   "cls": "2",
+   "n": 1188,
+   "betweenness": 0.14983164983164984,
+   "fiedler_df": 0.1893939393939394,
+   "brics": 0.21717171717171718,
+   "struct_model": 0.39814814814814814,
+   "chem_model": 0.7609427609427609,
+   "combined": 0.7878787878787878
+  },
+  {
+   "cls": "3",
+   "n": 567,
+   "betweenness": 0.3932980599647266,
+   "fiedler_df": 0.37213403880070545,
+   "brics": 0.3544973544973545,
+   "struct_model": 0.4620811287477954,
+   "chem_model": 0.4462081128747795,
+   "combined": 0.5379188712522046
+  },
+  {
+   "cls": "4",
+   "n": 91,
+   "betweenness": 0.03296703296703297,
+   "fiedler_df": 0.02197802197802198,
+   "brics": 0.0,
+   "struct_model": 0.03296703296703297,
+   "chem_model": 0.17582417582417584,
+   "combined": 0.15384615384615385
+  },
+  {
+   "cls": "5",
+   "n": 68,
+   "betweenness": 0.27941176470588236,
+   "fiedler_df": 0.29411764705882354,
+   "brics": 0.23529411764705882,
+   "struct_model": 0.4852941176470588,
+   "chem_model": 0.6617647058823529,
+   "combined": 0.6617647058823529
+  },
+  {
+   "cls": "8",
+   "n": 27,
+   "betweenness": 0.0,
+   "fiedler_df": 0.0,
+   "brics": 0.0,
+   "struct_model": 0.037037037037037035,
+   "chem_model": 0.9629629629629629,
+   "combined": 0.7037037037037037
+  },
+  {
+   "cls": "9",
+   "n": 114,
+   "betweenness": 0.03508771929824561,
+   "fiedler_df": 0.06140350877192982,
+   "brics": 0.0,
+   "struct_model": 0.15789473684210525,
+   "chem_model": 0.6403508771929824,
+   "combined": 0.5087719298245614
+  },
+  {
+   "cls": "10",
+   "n": 23,
+   "betweenness": 0.0,
+   "fiedler_df": 0.0,
+   "brics": 0.0,
+   "struct_model": 0.0,
+   "chem_model": 0.9130434782608695,
+   "combined": 0.6956521739130435
+  }
+ ],
+ "flow": {
+  "test": {
+   "split": "test",
+   "rows": 5007,
+   "kept": 3587,
+   "no_disconnection": 1407,
+   "size": 13
+  },
+  "train": {
+   "split": "train",
+   "rows": 24587,
+   "no_disconnection": 6861,
+   "kept": 17665,
+   "size": 60,
+   "unparsed": 1
+  }
+ },
+ "bond_positive_rate": 0.03549238968646468
+}

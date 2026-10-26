@@ -1,0 +1,19 @@
+[struct] train 15016 valid 2649 test 3587 | node feat 10 edge feat 2 | cuda
+  positives 0.0355 of bonds -> pos_weight 27.2
+  ep  1 loss 1.0275 valid 0.3265  (4.9s)
+  ep  2 loss 0.9256 valid 0.3484  (5.1s)
+  ep  3 loss 0.8800 valid 0.4213  (5.2s)
+  ep  4 loss 0.8501 valid 0.4443  (5.3s)
+  ep  5 loss 0.8223 valid 0.4594  (5.3s)
+  ep  6 loss 0.7972 valid 0.4466  (5.3s)
+  ep  7 loss 0.7747 valid 0.4941  (5.3s)
+  ep  8 loss 0.7551 valid 0.4964  (5.3s)
+  ep  9 loss 0.7381 valid 0.5104  (5.4s)
+  ep 10 loss 0.7199 valid 0.5104  (5.3s)
+  ep 11 loss 0.7078 valid 0.5240  (5.2s)
+  ep 12 loss 0.6988 valid 0.5259  (5.4s)
+  ep 13 loss 0.6899 valid 0.5349  (5.3s)
+  ep 14 loss 0.6814 valid 0.5349  (5.3s)
+  ep 15 loss 0.6780 valid 0.5338  (5.3s)
+  selected epoch 13 (valid 0.5349) -> test 0.5339
+  wrote ../data/gnn_struct.json

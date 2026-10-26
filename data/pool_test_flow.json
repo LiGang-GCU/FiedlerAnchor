@@ -1,0 +1,7 @@
+{
+ "split": "test",
+ "rows": 5007,
+ "kept": 3587,
+ "no_disconnection": 1407,
+ "size": 13
+}

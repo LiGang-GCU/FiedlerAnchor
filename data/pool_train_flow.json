@@ -1,0 +1,8 @@
+{
+ "split": "train",
+ "rows": 24587,
+ "no_disconnection": 6861,
+ "kept": 17665,
+ "size": 60,
+ "unparsed": 1
+}

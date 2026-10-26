@@ -1,0 +1,15 @@
+train 15016 mols | valid 2649 mols | test 3587 mols
+  chem      chose {'max_iter': 1500, 'learning_rate': 0.02, 'max_leaf_nodes': 127} (valid 0.5398)
+  struct    chose {'max_iter': 1500, 'learning_rate': 0.02, 'max_leaf_nodes': 127} (valid 0.3873)
+  combined  chose {'max_iter': 1500, 'learning_rate': 0.02, 'max_leaf_nodes': 127} (valid 0.6519)
+
+  random         0.0413
+  betweenness    0.2526
+  resistance     0.1634
+  fiedler_df     0.2660
+  sbe            0.1804
+  brics          0.2782
+  chem_model     0.5280
+  struct_model   0.3864
+  combined       0.6454
+wrote ../data/mol_test.jsonl and ../data/tuning.json

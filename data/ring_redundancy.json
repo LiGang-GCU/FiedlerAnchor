@@ -1,0 +1,9 @@
+{
+ "n_bonds": 104135,
+ "mismatches": {
+  "bridge": 0,
+  "in_cycle": 0,
+  "detour": 0
+ },
+ "total_mismatches": 0
+}
